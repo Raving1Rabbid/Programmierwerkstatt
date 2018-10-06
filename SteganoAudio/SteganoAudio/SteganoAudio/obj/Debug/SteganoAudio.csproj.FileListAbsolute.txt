@@ -1,0 +1,6 @@
+c:\users\stefanovt\documents\visual studio 2015\Projects\SteganoAudio\SteganoAudio\bin\Debug\SteganoAudio.exe.config
+c:\users\stefanovt\documents\visual studio 2015\Projects\SteganoAudio\SteganoAudio\bin\Debug\SteganoAudio.exe
+c:\users\stefanovt\documents\visual studio 2015\Projects\SteganoAudio\SteganoAudio\bin\Debug\SteganoAudio.pdb
+c:\users\stefanovt\documents\visual studio 2015\Projects\SteganoAudio\SteganoAudio\obj\Debug\SteganoAudio.csprojResolveAssemblyReference.cache
+c:\users\stefanovt\documents\visual studio 2015\Projects\SteganoAudio\SteganoAudio\obj\Debug\SteganoAudio.exe
+c:\users\stefanovt\documents\visual studio 2015\Projects\SteganoAudio\SteganoAudio\obj\Debug\SteganoAudio.pdb
