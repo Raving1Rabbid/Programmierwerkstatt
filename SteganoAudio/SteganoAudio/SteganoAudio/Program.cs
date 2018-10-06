@@ -14,33 +14,33 @@ namespace SteganoAudio
         {
             var fileName = "In The End (Official Lyric Video) - Linkin Park.wav";
             var bytes = File.ReadAllBytes(fileName);
-            var dataSizeBegin = 0;
+            var dataSize = 0;
+            var dataSizeEnd = 0;
             for (int i = 0; i < bytes.Length; i++)
             {
-                if (bytes[i + 0].ToString("x") == "64")
+                if (bytes[i + 0] == (byte)'d')
                 {
-                    if ((bytes[i + 1].ToString("x") == "61") &&
-                        (bytes[i + 2].ToString("x") == "74") &&
-                        (bytes[i + 3].ToString("x") == "61"))
+                    if ((bytes[i + 1] == (byte)'a') &&
+                        (bytes[i + 2] == (byte)'t') &&
+                        (bytes[i + 3] == (byte)'a'))
                     {
-                        dataSizeBegin = i + 8;
+                        dataSizeEnd = i + 8;
+                        for (int j = 0; j < 8; j++)
+                        {
+                            dataSize += Convert.ToInt32(bytes[i + j].ToString("x"), 16);
+                        }
+                        Console.WriteLine(dataSize);
                     }
                 }
             }
-            var dataBegin = dataSizeBegin;
-            for (int i = dataBegin; i < bytes.Length; i++)
+            var count = 0;
+            for (int i = dataSizeEnd; i < bytes.Length; i++)
             {
-                if (bytes[i] != 0)
-                {
-                    dataBegin = i;
-                    break;
-                }
+                count++;
             }
-            for (int i = dataBegin; i < bytes.Length; i++)
-            {
-                Console.WriteLine(bytes[i].ToString("x") + " = " + (char)bytes[i]);
-                Thread.Sleep(125);
-            }
+            Console.WriteLine(count/8);
+            // File.WriteAllBytes("In The End (Official Lyric Video) - Linkin Park (copy).wav", bytes);
+
             Console.ReadLine();
         }
     }
